@@ -78,6 +78,13 @@ export default {
 
       this.$emit("emitTranscribe", this.item, model);
     },
+
+    async download(item) {
+      const link = document.createElement("a");
+      link.href = item.url;
+      link.download = item.name;
+      link.click();
+    },
   },
 };
 </script>
